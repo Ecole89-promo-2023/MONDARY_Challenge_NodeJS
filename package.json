@@ -1,0 +1,27 @@
+{
+  "name": "mondary_challenge_nodejs",
+  "version": "1.0.0",
+  "description": "Mettez en place un server sous NodeJS et établissez une connection vers une base de données que vous nommerez `node_challenge_1`.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ecole89-promo-2023/MONDARY_Challenge_NodeJS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Ecole89-promo-2023/MONDARY_Challenge_NodeJS/issues"
+  },
+  "homepage": "https://github.com/Ecole89-promo-2023/MONDARY_Challenge_NodeJS#readme",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mysql2": "^3.12.0",
+    "sequelize": "^6.37.5"
+  }
+}
