@@ -63,4 +63,31 @@ const login = async (req, res) => {
     }
 };
 
-module.exports = { register, login };
+const getAllUsers = async (_, res) => {
+    try {
+        const users = await User.findAll({ attributes: { exclude: ['password'] } });
+        res.status(200).json(users);
+    } catch (error) {
+        res.status(500).json({ message: 'Server error', error: error.message });
+    }
+};
+
+const getUserById = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const user = await User.findOne({
+            where: { id },
+            attributes: { exclude: ['password'] }
+        });
+
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+
+        res.status(200).json(user);
+    } catch (error) {
+        res.status(500).json({ message: 'Server error', error: error.message });
+    }
+};
+
+module.exports = { register, login, getAllUsers, getUserById };
